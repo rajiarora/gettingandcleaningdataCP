@@ -23,4 +23,6 @@ YLabels<-activity_labels[Y[,1],2]
 colnames(meanstd)<-features[which(str_detect(features[,2],"std")|str_detect(features[,2],"mean")),2]
 
 ##Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-dataset<-cbind(subjects,YLabels,meanstd)
+finaldataset<-cbind(subjects,YLabels,meanstd)
+write.table(finaldataset,file="finaldataset.txt",sep=" ",row.names=FALSE,col.names=TRUE)
+
